@@ -1,0 +1,12 @@
+[ROMS]
+Cartridge=C:\Users\Utilisateur\Documents\BlinkyGX4000_vers1.5\blinkygx.cpr
+Lower=
+Upper(0)=
+Upper(7)=
+Cartridge Enabled=true
+[Configuration]
+CRTC Type=3
+Enable Plus=true
+Plus PPI=true
+Extended RAM=3
+Silicon Disc=false

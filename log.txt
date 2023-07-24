@@ -1,0 +1,37 @@
+﻿Blinky's Scary School GX4000
+
+
+--------------------------------------------------------------------
+02-06-2022
+version 1.6 alpha
+
+- Ajout du nombre de vie dans le hud
+- Correction du type d'animation de blinky quand il entre et sort de l'eau
+- Rend fonctionnel les ingredients du chaudron n°2
+- Time out dans un parchemin quand le temps est écoulé
+- impossibilité d'aller dans l'eau si on a pas remplit la mission du chaudron 2
+- rajout d'une notification quand on dépose des ingrédient dans le chaudron
+- Correction du timer de déroulement des objets dans le hud quand on en prends un 4eme
+	(la valeur n'était réinit à zéros tout le temps)
+--------------------------------------------------------------------
+31-05-2022
+version 1.5 alpha
+
+- Correction du saut, désormais Blinky ne rebondit plus quand on reste appuyé sur le bouton Fire 1.
+- Correction après le saut Blink repose bien ses pieds au sol, les coordonnées devenaient impaires, 
+	j'ai du corriger le calcule pour arrondire à la valeur supérieur ou inférieur selon le résultat obtenu.
+- Décalage de la partie haute de l'icone du parchemain est recalé au bon endroit.
+- La lampe n'était pas remonté suffisement haute dans le sprite ce qui présentait un décalage visuel, c'est corrigé.
+- Correction du bug de l'animation de Blinky dans certain cas qui affichait une valeur #0000 dans le registre HL.
+- Suppression des torches doublons entre tile figées et tile d'animation.
+- Rajout du game over et de son texte et gestion des vies
+
+--------------------------------------------------------------------
+25-05-2022
+version 1.0 alpha
+
+- Première version alpha jouable 
+
+
+
+

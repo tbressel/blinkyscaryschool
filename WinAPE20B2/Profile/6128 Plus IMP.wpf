@@ -1,0 +1,13 @@
+[ROMS]
+Cartridge=Burnin Rubber (UK) (1990) & Locomotive Basic (Clavier Azerty) [Original] [CARTOUCHE].cpr
+Lower=
+Upper(0)=
+Upper(7)=
+Cartridge Enabled=true
+[Configuration]
+CRTC Type=3
+Enable Plus=true
+Plus PPI=true
+Extended RAM=3
+Silicon Disc=false
+Enable 32 ROMs=true

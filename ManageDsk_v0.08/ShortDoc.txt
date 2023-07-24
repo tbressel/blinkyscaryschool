@@ -1,0 +1,124 @@
+ManageDsk
+---------
+
+Gestionnaire de fichiers DSK.
+Permet de manipuler des fichier .DSK comme des disquettes virtuelles.
+
+L'utilisation est assez simple :
+les 3 boutons en bas de l'interface permettent respectivement :
+- Bouton "Créer DSK" : Crée une disquette virtuelle vierge au format DATA
+- Bouton "Lire DSK" : Charge un fichier DSK en tant que disquette virtuelle
+- Bouton "Sauver DSK" : Sauvegarde de la disquette virtuelle dans un fichier
+    au format DSK
+
+La fenêtre centrale affiche un résumé des fichiers présents sur la disquette
+virtuelle, avec :
+- Le nom du fichier,
+- Le numéro d'User,
+- L'attribut de protection en écriture,
+- L'attribut de fichier caché,
+- Le type du fichier,
+- La taille du fichier.
+Pour obtenir plus d'informations sur un fichier, il suffit de faire un
+"click droit sur celui-ci". Une pop-up apparaît alors avec les informations
+sur le fichier sélectionné. Depuis cette popup, il est possible de modifier
+directement certains paramètres du fichier comme :
+Son adresse de début,
+Son point d'entrée,
+Ses attributs (lecture seule et fichier caché).
+
+Les boutons en dessous de la fenêtre permettent la manipulation des fichiers :
+- Bouton "Ajouter Fichier(s)" : Permet l'ajout de 1 ou plusieurs fichiers sur
+la disquette virtuelle. La sélection de plusieurs fichiers se fait à l'aide
+de l'interface standard de windows (Touche CTRL maintenue enfoncée).
+- Bouton "Exporter Fichier(s)" : Permet d'extraire de la disquette virtuelle
+1 ou plusieurs fichiers. Il suffit de sélectionner dans la fenêtre le ou les
+fichiers à exporter (en maintenant la touche CTRL enfoncée dans le cas de
+plusieurs fichiers) puis de cliquer sur le bouton. On pourra renomer chaque
+fichiers avant l'export.
+- Bouton "Renomer Fichier(s)" : Permet de renomer 1 ou plusieurs fichiers de
+la disquette virtuelle. Il suffit de sélectionner dans la fenêtre le ou les
+fichiers à exporter (en maintenant la touche CTRL enfoncée dans le cas de
+plusieurs fichiers) puis de cliquer sur le bouton. On pourra alors modifier
+le nom du fichier et le numéro d'User.
+- Bouton "Supprimer Fichier(s)" : Permet de supprimer 1 ou plusieurs fichiers
+de la disquette virtuelle. Il suffit de sélectionner dans la fenêtre le ou les
+fichiers à exporter (en maintenant la touche CTRL enfoncée dans le cas de
+plusieurs fichiers) puis de cliquer sur le bouton. Une confirmation de
+suppression sera demandée pour chaque fichiers.
+
+La case à cocher "nettoyage automatique des en-têtes au format AMSDOS" permet
+de vider (remplir avec des zéros) les octets inutilisés dans l'en-tête AMSDOS
+des fichiers basic ou BINAIRE. Cette option permet de gagner de la place lors
+de la compression d'un fichier DSK au format ZIP par exemple.
+Cette option fonctionne dans les deux sens : à l'importation de fichiers dans
+la disquette virtuelle et à l'exportation vers le disque dur du PC.
+
+Ligne de commande
+-----------------
+
+Depuis la version 0.8, ManageDsk peut s'utiliser depuis la ligne de commande,
+ou depuis un fichier batch (.BAT ou .CMD) : si il est lancé avec un ou
+plusieurs arguments, il n'ouvre pas l'interface, mais exécute les fonctions
+qui sont précisés sur la ligne de commande.
+Les paramètres acceptés par la ligne de commande sont les suivants :
+-Lnomdsk : permet de lire un fichier DSL.
+-C : permet de créer un DSK vierge
+-Amasquenomfichier : permet d'ajouter un ou plusieurs fichiers sur le .DSK
+-Snomdsk : permet de sauvegarder le dsk sous un nom particulier
+Les arguments peuvent se suivre sur la ligne de commande.
+
+Voici un exemple typique de création d'un dsk, ajout de fichiers, puis
+sauvegarde de ce dsk:
+
+ManageDsk -C -A*.BIN -Stoto.dsk
+
+Autre exemple : Lecture d'un dsk, ajout de fichiers .BAS et .BIN,
+puis sauvegarde :
+
+ManageDsk -LOld.dsk -A*.BAS -A*.BIN -SNew.dsk
+
+Remarque :
+- chaque commande (argument) commence par le caractère '-' (caractère moins)
+- Les options des commandes (noms de fichiers) doivent être accolés à la
+commande (pas d'espaces)
+- Les commandes peuvent être entrés en majuscules ou en minuscules.
+- pour le moment, 4 commandes sont connues :
+    -L : Lecture DSK
+    -C : Création DSK
+    -A : Ajout fichiers sur DSK
+    -S : Sauvegarde DSK
+
+
+Gestion versions
+----------------
+
+Version 0.6
+-----------
+Corrections apportées :
+- Possibilité de minimiser l'interface
+- Import ASCII : quand forcé en ASCII, supprime l'en-tête amsdos si elle existe
+- Importation d'un fichier ASCII en mode 'choix utilisateur', si passage en 
+binaire, ajout de l'en-tête amsdos
+- Ajout bouton "sauver sous" et modification du bouton "sauver dsk" qui
+sauve directement le fichier existant en l'écrasant.
+
+Version 0.7 (26/02/2005)
+------------------------
+Corrections apportées :
+- Problème de sauvegarde de la table des répertoires sur disquette avec des
+secteurs entrelacés fixé.
+
+
+Version 0.8 (02/03/2005)
+------------------------
+- Possibilité de modifier les attributs "Lecture seule" et "Cachés" de chaque
+fichiers présents sur un .DSK
+- Gestion de la ligne de commande (utile pour les fichiers batch)
+
+
+
+Pour toute informations complémentaires, rapport de buggs ou autre, envoyez
+moi un message à l'adresse suivante :
+
+ldeplanque(at)nordnet(point)fr
